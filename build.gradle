@@ -1,0 +1,39 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext {
+        android = [
+            compile: 30,
+            min: 28,
+            target: 30
+        ]
+        version = [
+            name: "Compass",
+            version_code: 1,
+            version_name: '1.0.0'
+        ]
+        libs = [
+            kotlin_version: "1.5.0",
+            hilt_version: "2.34-beta"
+        ]
+    }
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:4.2.1"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${libs.kotlin_version}"
+        classpath "com.google.dagger:hilt-android-gradle-plugin:${libs.hilt_version}"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
