@@ -1,7 +1,6 @@
 package com.nobrand.compass.di
 
 import android.content.Context
-import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import com.nobrand.compass.data.SensorCallback
 import dagger.Module
@@ -24,7 +23,7 @@ class SensorModule {
 
     @Singleton
     @Provides
-    fun provideSensorEventListener(): SensorEventListener {
+    fun provideSensorEventListener(): SensorCallback {
         return SensorCallback()
     }
 }
